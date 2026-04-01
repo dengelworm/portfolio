@@ -46,29 +46,26 @@
       font-weight: 500;
     }
 
-    /* Grid container */
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+   /* 父容器 */
+.grid-container {
+  column-count: 3;           /* 列数，可根据屏幕调整 */
+  column-gap: 16px;          /* 列间距 */
+  width: 90%;
+  margin: 0 auto;
+}
 
-    /* Each project item */
-    .grid-item {
-      text-align: center;
-      cursor: pointer;
-    }
+/* 每个网格项目 */
+.grid-item {
+  display: inline-block;     /* 让每个块在列中显示 */
+  width: 100%;               /* 占满所在列宽度 */
+  margin-bottom: 16px;       /* 每个网格间距 */
+}
 
-    .grid-item img {
-      width: 100%;
-      border-radius: 10px;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.3s;
-    }
+.grid-item img {
+  width: 100%;               /* 图片宽度填充父容器 */
+  height: auto;              /* 高度自适应，保持比例 */
+  display: block;
+}
 
     .grid-item:hover img {
       transform: scale(1.05);  /* 悬停放大效果 */
@@ -79,6 +76,7 @@
       font-size: 1em;
       font-weight: 300;
       color: #222;
+      text-decoration: underline;
     }
   </style>
 </head>
