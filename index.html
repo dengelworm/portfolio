@@ -1,40 +1,148 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Jia LIU</title>
+  <title>Jia LIU Portfolio</title>
 
   <style>
+    /* Global styles */
     body {
-      font-family: Arial;
-      margin: 40px;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
       background: #f5f5f5;
+      color: #222;
     }
 
-    h1 {
+    /* Header: large title + brief intro */
+    header {
       text-align: center;
+      padding: 60px 20px 40px;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+    header h1 {
+      font-size: 4em;
+      margin: 0;
     }
 
-    img {
-      width: 100%;
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+      color: #555;
+    }
+
+    /* Navigation menu */
+    nav {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    nav a {
+      display: inline-block;
+      margin: 0 15px;
+      text-decoration: none;
+      color: #222;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #0073e6;
+    }
+
+    /* Carousel container */
+    .carousel {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto 60px;
+      overflow: hidden;
       border-radius: 10px;
+    }
+
+    .carousel img {
+      width: 100%;
+      display: none;
+    }
+
+    .carousel img.active {
+      display: block;
+    }
+
+    /* Left/right arrows */
+    .carousel button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      border: none;
+      color: #fff;
+      font-size: 2em;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .carousel button.prev {
+      left: 10px;
+    }
+
+    .carousel button.next {
+      right: 10px;
     }
   </style>
 </head>
 
 <body>
 
-<h1>Jia LIU</h1>
+<header>
+  <h1>Jia LIU</h1>
+  <p>Illustration · Animation · Graphic Design · Translation</p>
+</header>
 
-<div class="gallery">
-  <img src="avatar 2019.png">
+<nav>
+  <a href="#">Illustration</a>
+  <a href="#">Animation</a>
+  <a href="#">Graphic Design</a>
+  <a href="#">Translation</a>
+</nav>
+
+<div class="carousel">
+  <img src="image1.jpg" class="active">
+  <img src="image2.jpg">
+  <img src="image3.jpg">
+  <button class="prev">&#10094;</button>
+  <button class="next">&#10095;</button>
 </div>
+
+<script>
+  // Carousel script
+  const images = document.querySelectorAll('.carousel img');
+  const prevBtn = document.querySelector('.carousel .prev');
+  const nextBtn = document.querySelector('.carousel .next');
+  let current = 0;
+
+  function showImage(index) {
+    images.forEach((img, i) => img.classList.toggle('active', i === index));
+  }
+
+  prevBtn.addEventListener('click', () => {
+    current = (current - 1 + images.length) % images.length;
+    showImage(current);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    current = (current + 1) % images.length;
+    showImage(current);
+  });
+
+  // Optional: automatic slideshow every 5 seconds
+  setInterval(() => {
+    current = (current + 1) % images.length;
+    showImage(current);
+  }, 5000);
+</script>
 
 </body>
 </html>
