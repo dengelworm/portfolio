@@ -65,19 +65,37 @@ nav a:hover {
   margin: 0 auto;
   overflow: hidden;
   border-radius: 10px;
-
   height: 60vh;          /* 占屏幕60%高度，自适应 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* 每个轮播项 */
+.carousel .slide {
+  display: none;
+  text-align: center;
+}
+
+.carousel .slide.active {
+  display: block;
+}
+
+/* 图片样式 */
 .carousel img {
   width: 100%;
   height: 100%;
   object-fit: contain;    /* 保持比例，完整显示 */
-  display: none;
+  display: block;
 }
 
-.carousel img.active {
-  display: block;
+/* 图片下方文字注释 */
+.carousel .caption {
+  margin-top: 10px;
+  color: #222;
+  font-size: 1em;
+  font-weight: 300;
+  text-decoration: underline; /* 可选，显示可点击感 */
 }
 
 /* Left/right arrows */
@@ -131,39 +149,59 @@ nav a:hover {
 </nav>
 
 <div class="carousel">
-  <img src="nikkas-tiny-wonders01.jpg" class="active">
-  <img src="nikkas-tiny-wonders02.jpg">
-  <img src="nikkas-tiny-wonders03.jpg">
-  <img src="nikkas-tiny-wonders04.jpg">
+  <div class="slide active">
+    <a href="project1.html">
+      <img src="nikkas-tiny-wonders01.jpg">
+      <p class="caption">Tiny Wonders 01</p>
+    </a>
+  </div>
+  <div class="slide">
+    <a href="project2.html">
+      <img src="nikkas-tiny-wonders02.jpg">
+      <p class="caption">Tiny Wonders 02</p>
+    </a>
+  </div>
+  <div class="slide">
+    <a href="project3.html">
+      <img src="nikkas-tiny-wonders03.jpg">
+      <p class="caption">Tiny Wonders 03</p>
+    </a>
+  </div>
+  <div class="slide">
+    <a href="project4.html">
+      <img src="nikkas-tiny-wonders04.jpg">
+      <p class="caption">Tiny Wonders 04</p>
+    </a>
+  </div>
+
   <button class="prev">&#10094;</button>
   <button class="next">&#10095;</button>
 </div>
 
 <script>
-  // Carousel script
-  const images = document.querySelectorAll('.carousel img');
+  const slides = document.querySelectorAll('.carousel .slide');
   const prevBtn = document.querySelector('.carousel .prev');
   const nextBtn = document.querySelector('.carousel .next');
   let current = 0;
 
-  function showImage(index) {
-    images.forEach((img, i) => img.classList.toggle('active', i === index));
+  function showSlide(index) {
+    slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
   }
 
   prevBtn.addEventListener('click', () => {
-    current = (current - 1 + images.length) % images.length;
-    showImage(current);
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
   });
 
   nextBtn.addEventListener('click', () => {
-    current = (current + 1) % images.length;
-    showImage(current);
+    current = (current + 1) % slides.length;
+    showSlide(current);
   });
 
-  // Automatic slideshow every 5 seconds
+  // 自动轮播
   setInterval(() => {
-    current = (current + 1) % images.length;
-    showImage(current);
+    current = (current + 1) % slides.length;
+    showSlide(current);
   }, 5000);
 </script>
 
