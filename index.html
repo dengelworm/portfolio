@@ -5,14 +5,15 @@
   <title>Jia LIU</title>
 
   <style>
-    /* Global styles */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #fff;
-      color: #222;
-    }
+/* 全局字体改为 Helvetica */
+body {
+  font-family: 'Helvetica', sans-serif; /* 全站文字用 Helvetica */
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #222;
+  font-weight: 300;  /* 默认细字 */
+}
 
     /* Header: large title + brief intro */
     header {
@@ -22,16 +23,19 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
-    header h1 {
-      font-size: 4em;
-      margin: 0;
-    }
+header h1 {
+  font-size: 4em;
+  margin: 0;
+  color: #222;
+  font-weight: 700;   /* 粗体 */
+}
 
-    header p {
-      font-size: 1.2em;
-      margin-top: 10px;
-      color: #555;
-    }
+header p {
+  font-size: 1.2em;
+  margin-top: 10px;
+  color: #555;
+  font-weight: 300;   /* 细字 */
+}
 
     /* Navigation menu */
     nav {
@@ -39,18 +43,20 @@
       margin: 30px 0;
     }
 
-    nav a {
-      display: inline-block;
-      margin: 0 15px;
-      text-decoration: none;
-      color: #222;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
+nav a {
+  display: inline-block;
+  margin: 0 15px;
+  text-decoration: none;
+  color: #222;
+  font-weight: 300;    /* 细字 */
+  font-size: 1em;
+  transition: color 0.3s, font-weight 0.3s;
+}
 
-    nav a:hover {
-      color: #0073e6;
-    }
+nav a:hover {
+  color: #0073e6;
+  font-weight: 700;   /* 悬停加粗，增强反馈 */
+}
 
     /* Carousel container */
     .carousel {
