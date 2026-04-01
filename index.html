@@ -13,20 +13,21 @@ body {
   background: #fff;
   color: #222;
   font-weight: 300;  /* 默认细字 */
+  overflow: hidden;  /* 避免滚动条出现 */
 }
 
-    /* Header: large title + brief intro */
-    header {
-      text-align: center;
-      padding: 60px 20px 40px;
-      background: #fff;
-    }
+/* Header: large title + brief intro */
+header {
+  text-align: center;
+  padding: 10vh 20px 5vh;  /* 使用 vh 适应屏幕高度 */
+  background: #fff;
+}
 
 header h1 {
   font-size: 4em;
   margin: 0;
   color: #222;
-  font-weight: 500;   /* 粗体 */
+  font-weight: 700;   /* 大标题粗体 */
 }
 
 header p {
@@ -36,11 +37,11 @@ header p {
   font-weight: 300;   /* 细字 */
 }
 
-    /* Navigation menu */
-    nav {
-      text-align: center;
-      margin: 30px 0;
-    }
+/* Navigation menu */
+nav {
+  text-align: center;
+  margin: 3vh 0;       /* 使用 vh 适应屏幕 */
+}
 
 nav a {
   display: inline-block;
@@ -54,29 +55,33 @@ nav a {
 
 nav a:hover {
   color: #0073e6;
-  font-weight: 700;   /* 悬停加粗，增强反馈 */
+  font-weight: 700;   /* 悬停加粗 */
 }
 
-    /* Carousel container */
-    .carousel {
-      position: relative;
-      max-width: 800px;
-      margin: 0 auto 60px;
-      overflow: hidden;
-      border-radius: 10px;
-    }
+/* Carousel container */
+.carousel {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
 
-    .carousel img {
-      width: 100%;
-      display: none;
-    }
+  height: 60vh;          /* 占屏幕60%高度，自适应 */
+}
 
-    .carousel img.active {
-      display: block;
-    }
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;    /* 保持比例，完整显示 */
+  display: none;
+}
 
-    /* Left/right arrows */
-   .carousel button {
+.carousel img.active {
+  display: block;
+}
+
+/* Left/right arrows */
+.carousel button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -86,26 +91,26 @@ nav a:hover {
   font-size: 2em;
   cursor: pointer;
 
-  width: 50px;           /* 固定宽高 */
+  width: 50px;           /* 固定宽高正圆 */
   height: 50px;
-  line-height: 50px;     /* 让箭头垂直居中 */
-  border-radius: 50%;    /* 正圆 */
-  text-align: center;    /* 箭头水平居中 */
+  line-height: 50px;     
+  border-radius: 50%;    
+  text-align: center;    
 
   opacity: 0;            /* 悬停显示 */
   transition: opacity 0.3s;
-  padding: 0;            /* 去掉原来的 padding */
+  padding: 0;            
 }
 
+.carousel button.prev {
+  left: 10px;
+}
 
-    .carousel button.prev {
-      left: 10px;
-    }
+.carousel button.next {
+  right: 10px;
+}
 
-    .carousel button.next {
-      right: 10px;
-    }
-    /* 鼠标悬停轮播图显示按钮 */
+/* 鼠标悬停轮播图显示按钮 */
 .carousel:hover button {
   opacity: 1;
 }
@@ -154,7 +159,7 @@ nav a:hover {
     showImage(current);
   });
 
-  // Optional: automatic slideshow every 5 seconds
+  // Automatic slideshow every 5 seconds
   setInterval(() => {
     current = (current + 1) % images.length;
     showImage(current);
