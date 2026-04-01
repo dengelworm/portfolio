@@ -80,15 +80,21 @@ nav a:hover {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.06);
+  background: rgba(0,0,0,0.06);
   border: none;
   color: #fff;
   font-size: 2em;
-  padding: 10px;
   cursor: pointer;
-  border-radius: 50%;
-  opacity: 0;             /* 初始透明 */
+
+  width: 50px;           /* 固定宽高 */
+  height: 50px;
+  line-height: 50px;     /* 让箭头垂直居中 */
+  border-radius: 50%;    /* 正圆 */
+  text-align: center;    /* 箭头水平居中 */
+
+  opacity: 0;            /* 悬停显示 */
   transition: opacity 0.3s;
+  padding: 0;            /* 去掉原来的 padding */
 }
 
 
