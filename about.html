@@ -100,18 +100,19 @@
       .about-text {
         text-align: center;
       }
-      .contact-link {
-  color: #222;          /* 文字颜色 */
-  text-decoration: underline; /* 下划线 */
-  font-weight: 300;     /* 可选：细字 */
-  cursor: pointer;      /* 鼠标悬停显示手型 */
-  font-size: 1em;       /* 可根据需要调整 */
-  transition: color 0.3s;
+     .contact-link, 
+.contact-link:link, 
+.contact-link:visited, 
+.contact-link:hover, 
+.contact-link:active {
+  color: #222;            /* 正常颜色 */
+  text-decoration: underline;
+  font-weight: 300;
 }
 
 .contact-link:hover {
-  color: #555;    /* 悬停变色效果，可选 */
-  font-weight: 500;
+  color: #555;          /* 悬停颜色 */
+  font-weight: 500
 }
     }
   </style>
@@ -137,7 +138,7 @@
     <p>My artistic journey is guided by curiosity and experimentation, blending traditional techniques with digital media. I love exploring stories through visuals and creating experiences that resonate with diverse audiences.</p>
     <p>In addition to my creative work, I offer translation services to bridge cultural gaps and help ideas reach a wider audience.</p>
  
-    <a href="mailto:yourname@example.com" class="contact-link">Contact</a>
+    <a href="mailto:jlcreation@outlook.com" class="contact-link">Contact</a>
 
     
   </div>
