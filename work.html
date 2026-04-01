@@ -59,6 +59,8 @@
   display: inline-block;     /* 让每个块在列中显示 */
   width: 100%;               /* 占满所在列宽度 */
   margin-bottom: 16px;       /* 每个网格间距 */
+  position: relative;   /* ⭐关键：让caption定位到图片上 */
+  overflow: hidden;     /* ⭐防止放大溢出 */
 }
 
 .grid-item img {
@@ -69,6 +71,7 @@
 
     .grid-item:hover img {
       transform: scale(1.05);  /* 悬停放大效果 */
+      filter: brightness(70%);  /* ⭐变暗 */
     }
 
     /* 文字注释悬浮显示 */
