@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jia LIU - Work</title>
+  <style>
+    body {
+      font-family: 'Helvetica', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #222;
+      font-weight: 300;
+    }
+
+    /* Header + nav */
+    header {
+      text-align: center;
+      padding: 2vh 20px;
+      background: #fff;
+    }
+
+    header h1 {
+      font-size: 2em;       /* 小于主页标题 */
+      margin: 0;
+      font-weight: 500;
+    }
+
+    nav {
+      text-align: center;
+      margin: 1vh 0;
+    }
+
+    nav a {
+      display: inline-block;
+      margin: 0 15px;
+      text-decoration: none;
+      color: #222;
+      font-weight: 300;
+      font-size: 1em;
+      transition: color 0.3s, font-weight 0.3s;
+    }
+
+    nav a:hover {
+      color: #555;
+      font-weight: 500;
+    }
+
+    /* Grid container */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Each project item */
+    .grid-item {
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .grid-item img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s;
+    }
+
+    .grid-item:hover img {
+      transform: scale(1.05);  /* 悬停放大效果 */
+    }
+
+    .grid-item p {
+      margin-top: 8px;
+      font-size: 1em;
+      font-weight: 300;
+      color: #222;
+      text-decoration: underline; /* 点击感 */
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Jia LIU</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="links.html">Links</a>
+  </nav>
+</header>
+
+<div class="grid-container">
+  <div class="grid-item">
+    <a href="project1.html">
+      <img src="project1.jpg" alt="Project 1">
+      <p>Project 1 Name</p>
+    </a>
+  </div>
+  <div class="grid-item">
+    <a href="project2.html">
+      <img src="project2.jpg" alt="Project 2">
+      <p>Project 2 Name</p>
+    </a>
+  </div>
+  <div class="grid-item">
+    <a href="project3.html">
+      <img src="project3.jpg" alt="Project 3">
+      <p>Project 3 Name</p>
+    </a>
+  </div>
+  <!-- 更多项目继续添加 -->
+</div>
+
+</body>
+</html>
