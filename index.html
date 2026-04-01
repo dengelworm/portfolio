@@ -63,7 +63,7 @@ nav a:hover {
   position: relative;
   max-width: 800px;
   margin: 0 auto;
-  overflow: visible;
+  overflow: hidden;
   border-radius: 10px;
   height: 60vh;          /* 占屏幕60%高度，自适应 */
   display: flex;
@@ -87,15 +87,6 @@ nav a:hover {
   height: 100%;
   object-fit: contain;    /* 保持比例，完整显示 */
   display: block;
-}
-
-/* 图片下方文字注释 */
-.carousel .caption {
-  margin-top: 10px;
-  color: #222;
-  font-size: 1em;
-  font-weight: 300;
-  text-decoration: underline; /* 可选，显示可点击感 */
 }
 
 /* Left/right arrows */
@@ -152,13 +143,11 @@ nav a:hover {
   <div class="slide active">
     <a href="project1.html">
       <img src="nikkas-tiny-wonders01.jpg">
-      <p class="caption">Nikka's Tiny Wonders</p>
     </a>
   </div>
   <div class="slide">
     <a href="project1.html">
       <img src="nikkas-tiny-wonders02.jpg">
-      <p class="caption">Nikka's Tiny Wonders</p>
     </a>
   </div>
 
