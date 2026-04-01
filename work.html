@@ -71,13 +71,33 @@
       transform: scale(1.05);  /* 悬停放大效果 */
     }
 
-    .grid-item p {
-      margin-top: 8px;
-      font-size: 1em;
-      font-weight: 300;
-      color: #222;
-      text-decoration: underline;
-    }
+    /* 文字注释悬浮显示 */
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  color: #fff;
+  background: rgba(0,0,0,0.5); /* 半透明黑色背景 */
+  text-align: center;
+  opacity: 0;                 /* 默认隐藏 */
+  transition: opacity 0.3s;
+  font-weight: 500;
+  font-size: 1em;
+}
+
+/* 悬停显示文字 */
+.grid-item:hover .caption {
+  opacity: 1;
+}
+
+/* 链接覆盖整个 grid-item */
+.grid-item a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
   </style>
 </head>
 <body>
@@ -95,25 +115,25 @@
   <div class="grid-item">
     <a href="nikkas-tiny-winders.html">
       <img src="nikkas-tiny-wonders02.jpg" alt="Nikka's Tiny Wonders">
-      <p>Nikka's Tiny Wonders</p>
+      <div class="caption">Nikka's Tiny Wonders</div>
     </a>
   </div>
   <div class="grid-item">
     <a href="gogos-quiet-hours.html">
       <img src="gogos-quiet-hours01.png" alt="Gogo's Quiet Hours">
-      <p>Gogo's Quiet Hours</p>
+      <div class="caption">Gogo's Quiet Hours</div>
     </a>
   </div>
   <div class="grid-item">
     <a href="alokan-au-bout-du-fil.html">
       <img src="alokan01.png" alt="Alokan-Au bout du fil">
-      <p>Alokan-Au bout du fil</p>
+      <div class="caption">Alokan-Au bout du fil</div>
     </a>
   </div>
   <div class="grid-item">
     <a href="rupture.html">
       <img src="rupture01.png" alt="Rupture">
-      <p>Rupture</p>
+      <div class="caption">Rupture</div>
     </a>
   </div>
   <!-- 更多项目继续添加 -->
