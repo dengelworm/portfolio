@@ -114,6 +114,21 @@
   font-weight: 500;
 }
     }
+    /* About 页面底部 Contact 链接样式 */
+.about-container .contact-link,
+.about-container .contact-link:link,
+.about-container .contact-link:visited {
+  color: #222;           /* 默认文字颜色 */
+  text-decoration: none;  /* 去掉下划线 */
+  font-weight: 300;
+  transition: color 0.3s, font-weight 0.3s;
+}
+
+.about-container .contact-link:hover,
+.about-container .contact-link:active {
+  color: #555;           /* 悬停颜色 */
+  font-weight: 500;      /* 悬停加粗 */
+}
   </style>
 </head>
 <body oncontextmenu="return false;">  <!-- ⭐禁止右键 -->
