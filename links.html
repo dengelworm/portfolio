@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jia LIU - Links</title>
+
+  <style>
+    body {
+      font-family: 'Helvetica', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #222;
+      font-weight: 300;
+    }
+
+    /* Header + nav */
+    header {
+      text-align: center;
+      padding: 2vh 20px;
+    }
+
+    header h1 {
+      font-size: 2em;
+      margin: 0;
+      font-weight: 500;
+    }
+
+    nav {
+      margin: 1vh 0;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #222;
+      font-weight: 300;
+      transition: color 0.3s, font-weight 0.3s;
+    }
+
+    nav a:hover {
+      color: #555;
+      font-weight: 500;
+    }
+
+    /* Links container */
+    .links-container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    /* 单个链接项 */
+    .link-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    /* 整个区域可点击 */
+    .link-item a {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      text-decoration: none;
+      color: #222;
+      width: 100%;
+    }
+
+    /* icon 统一大小 */
+    .link-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;   /* 统一为圆形 */
+      object-fit: cover;
+    }
+
+    /* 文字 */
+    .link-text {
+      font-size: 1em;
+      font-weight: 300;
+    }
+
+    /* hover 效果 */
+    .link-item a:hover {
+      opacity: 0.6;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Jia LIU</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="work.html">Work</a>
+  </nav>
+</header>
+
+<div class="links-container">
+
+  <!-- 🔹 一个链接项（复制这个结构即可） -->
+  <div class="link-item">
+    <a href="https://instagram.com/yourname" target="_blank">
+      <img src="instagram.png" class="link-icon">
+      <div class="link-text">Instagram</div>
+    </a>
+  </div>
+
+  <div class="link-item">
+    <a href="https://www.behance.net/yourname" target="_blank">
+      <img src="behance.png" class="link-icon">
+      <div class="link-text">Behance</div>
+    </a>
+  </div>
+
+  <div class="link-item">
+    <a href="https://www.linkedin.com/in/yourname" target="_blank">
+      <img src="linkedin.png" class="link-icon">
+      <div class="link-text">LinkedIn</div>
+    </a>
+  </div>
+
+</div>
+
+</body>
+</html>
