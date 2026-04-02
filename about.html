@@ -102,17 +102,16 @@
       }
      .contact-link, 
 .contact-link:link, 
-.contact-link:visited, 
-.contact-link:hover, 
-.contact-link:active {
-  color: #222;            /* 正常颜色 */
-  text-decoration: underline;
+.contact-link:visited {
+  color: #222;
+  text-decoration: none;   /* ❌去掉下划线 */
   font-weight: 300;
+  transition: color 0.3s, font-weight 0.3s;  /* ✅加一点过渡，更顺滑 */
 }
 
 .contact-link:hover {
-  color: #555;          /* 悬停颜色 */
-  font-weight: 500
+  color: #555;
+  font-weight: 500;
 }
     }
   </style>
