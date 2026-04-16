@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Project Detail</title>
+  <style>
+    /* 全局字体 */
+    body {
+      font-family: 'Helvetica', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #222;
+      font-weight: 300;
+    }
+
+    /* 顶部导航 */
+    nav {
+      text-align: left;
+      padding: 10px 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #222;
+      font-weight: 300;
+      font-size: 1em;
+      transition: color 0.3s, font-weight 0.3s;
+    }
+
+    nav a:hover {
+      color: #555;
+      font-weight: 500;
+    }
+
+    /* 内容区域 */
+    .content {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+
+    /* 大图 */
+    .project-image {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    /* 项目文字 */
+    .project-text {
+      font-size: 1.1em;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* Project 页面底部 links（Nikka） */
+.project-link,
+.project-link:link,
+.project-link:visited {
+  color: #222;
+  text-decoration: underline;
+  font-weight: 300;
+  transition: color 0.3s, font-weight 0.3s;
+}
+
+.project-link:hover,
+.project-link:active {
+  color: #555;
+  font-weight: 500;
+}
+  </style>
+</head>
+
+<body oncontextmenu="return false;">  <!-- ⭐禁止右键 -->
+
+<!-- 导航 -->
+<nav>
+  <a href="work.html" id="back-link">← Back</a>
+</nav>
+
+<!-- 内容区域 -->
+<div class="content">
+   <!-- 项目文字说明，替换内容 -->
+  <div class="project-text">
+    <h2>Personal Works</h2>
+    <p>
+   
+I explore self-expression through different artistic styles and drawing techniques, using personal work as a space for experimentation and visual exploration.
+    </p>
+   
+  <!-- 大图，替换 src -->
+  <img src="nikkas-tiny-wonders02.jpg" alt="nikkas-tiny-wonders02" class="project-image">
+   <img src="nikkas-tiny-wonders01.jpg" alt="nikkas-tiny-wonders02" class="project-image">
+   <img src="nikkas-tiny-wonders04.jpg" alt="nikkas-tiny-wonders02" class="project-image">
+   <img src="nikkas-tiny-wonders05.jpg" alt="nikkas-tiny-wonders02" class="project-image">
+</div>
+
+<script>
+  // JS实现回到work页面上次浏览位置（可选）
+  const backLink = document.getElementById('back-link');
+  backLink.addEventListener('click', function(e){
+    e.preventDefault();
+    const workPage = 'work.html';
+    // 如果 localStorage 里有保存位置
+    const scrollY = localStorage.getItem('workScrollY') || 0;
+    window.location.href = workPage + '#scroll=' + scrollY;
+  });
+
+  // 可在 work 页面加 JS 保存滚动位置
+  // window.addEventListener('beforeunload', () => {
+  //   localStorage.setItem('workScrollY', window.scrollY);
+  // });
+</script>
+
+</body>
+</html>
