@@ -55,6 +55,7 @@
       color: #333;
     }
 
+    /* 视频 */
     .video-container {
   position: relative;
   width: 100%;
@@ -62,7 +63,13 @@
   margin-top: 20px;
 }
 
-    /* 视频 */
+    /* 视频外层（控制整体宽度） */
+.video-wrapper {
+  max-width: 1200px;   /* ⭐ 比 content 更宽 */
+  margin: 40px auto;   /* 居中 + 上下留白 */
+  padding: 0 20px;     /* 左右留白 */
+}
+    
 .video-container iframe {
   position: absolute;
   top: 0;
@@ -115,8 +122,10 @@
       Selected for Un Festival C’est Trop Court – Animation Short Film Competition (2019)
     </p>
   </div>
+</div>
 
   <!-- 🎬 Vimeo 视频 -->
+  <div class="video-wrapper">
   <div class="video-container">
     <iframe 
       src="https://player.vimeo.com/video/278288048" 
@@ -125,7 +134,6 @@
       allowfullscreen>
     </iframe>
   </div>
-
 </div>
 
 <script>
